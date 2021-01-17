@@ -2,28 +2,38 @@
 
 using namespace std;
 
-int linearSerach(int[], int, int);
+int LinearSearch(int *array, int size, int target);
 
-int main(void)
-{
-    int arr[] = {1, 2, 3, 4, 5, 6};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    
-    int num;
-    cout << "Enter a number: ";
-    cin >> num;
-    
-    int result = linearSerach(arr, size, num);
-    (result != -1)
-    ?   cout << "Element Found at Index " << result << endl
-    :   cout << "Element not Found!";
-}
+int main() {
+    int size;
+    cout << "\nEnter the size of the Array : ";
+    cin >> size;
 
-int linearSerach(int arr[], int size, int num){
-    for (int i = 0; i < size; i++)
-    {
-        if (num == arr[i])
-        {
+    int *array = new int[size];
+    int target;
+
+
+    cout << "\nEnter the Array of " << size << " numbers : ";
+    for (int i = 0; i < size; i++) {
+        cin >> array[i];
+    }
+
+    cout << "\nEnter the number to be searched : ";
+    cin >> target;
+
+    int index = LinearSearch(array, size, target);
+    if (index != -1) {
+        cout << "\nNumber found at index : " << index + 1;
+    } else {
+        cout << "\nNumber not found.";
+    }
+
+    delete[] array;
+    return 0;
+
+}int LinearSearch(int *array, int size, int target) {
+    for (int i = 0; i < size; ++i) {
+        if (array[i] == target) {
             return i;
         }
     }
