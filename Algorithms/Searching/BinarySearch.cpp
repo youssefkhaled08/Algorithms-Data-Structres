@@ -2,6 +2,9 @@
 
 using namespace std;
 
+/* Recursive & Iterative Binary Search functions. It returns the index of a target number in
+    a given array [left, right] if it's present, otherwise it returns -1. */
+
 int iterativeBinarySearch(int* arr, int left, int right, int target);
 int recursiveBinarySearch(int *arr, int left, int right, int target);
 
@@ -35,7 +38,7 @@ int main(void){
 int iterativeBinarySearch(int* arr, int left, int right, int target){
      
     while (left <= right) {
-        int mid =  left + ( right - left ) / 2;
+        int mid =  left + ( right - left ) / 2;                                 // To avoid overflow.
         if (target == arr[mid])
             return mid;
         else if (target < arr[mid])
@@ -51,7 +54,7 @@ int recursiveBinarySearch(int *arr, int left, int right, int target){
         return -1;
     }
     
-    int mid =  left + ( right - left )  / 2;
+    int mid =  left + ( right - left )  / 2;                                    // To avoid overflow.
     if (arr[mid] == target){
         return mid;
     } else if (arr[mid] > target){

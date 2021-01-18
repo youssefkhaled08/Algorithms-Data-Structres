@@ -2,6 +2,9 @@
 
 using namespace std;
 
+/* Linear Search function, that returns the index of a target number in
+    a given array [left, right] if it's present, otherwise it returns -1. */ 
+
 int LinearSearch(int *array, int size, int target);
 
 int main() {
