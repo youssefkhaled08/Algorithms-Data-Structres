@@ -4,6 +4,7 @@ using namespace std;
 
 void swap(int*, int*);
 void bubbleSort(int*, int);
+void recursiveBubbleSort(int* arr, int size);
 
 int main (void){
     int size;
@@ -19,8 +20,8 @@ int main (void){
         cin >> array[i];
     }
 
-    bubbleSort(array, size);
-    
+    //bubbleSort(array, size);
+    recursiveBubbleSort(array, size);
     cout << "\nThe Sorted Array: ";
     for (int i = 0; i < size; i++) {
         cout << array[i] << " ";
@@ -48,4 +49,13 @@ void bubbleSort(int* arr, int size){
         }
             size--;
     }
+}
+void recursiveBubbleSort(int* arr, int size){
+    if (size == 1)
+        return;
+    for (int i = 0; i < size - 1; i++){
+        if(arr[i] > arr[i + 1])
+            swap(arr[i], arr[i + 1]);
+    }
+    recursiveBubbleSort(arr, size - 1);
 }
