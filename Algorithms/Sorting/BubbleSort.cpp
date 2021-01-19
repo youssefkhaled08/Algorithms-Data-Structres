@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are out of wrong order.
+
 void swap(int*, int*);
 void bubbleSort(int*, int);
 void recursiveBubbleSort(int* arr, int size);

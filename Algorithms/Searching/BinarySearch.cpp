@@ -2,8 +2,8 @@
 
 using namespace std;
 
-/* Recursive & Iterative Binary Search functions. It returns the index of a target number in
-    a given array [left, right] if it's present, otherwise it returns -1. */
+/* Recursive & iterative binary search algorithms. It searches a sorted array by repeatedly dividing the search interval in half,
+   it returns the index of the target number in a given array [left, right] if it's present, otherwise it returns -1. */
 
 int iterativeBinarySearch(int* arr, int left, int right, int target);
 int recursiveBinarySearch(int *arr, int left, int right, int target);
