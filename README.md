@@ -1,2 +1,2 @@
-# Algorithms-Data-Structres
-An educational collection of self-implemented algorithms and data-structures.
+## Algorithms-Data-Structres
+An educational collection of self-implemented Algorithms and Data-Structures using C/C++.
