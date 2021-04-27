@@ -1,10 +1,10 @@
 #include <iostream>
-#include "stack.cpp"
+#include "Stack.cpp"
 
 using namespace std;
 
 int main(){
-    stack<int> s(5);
+    Stack<int> s(5);
     s.push(10);    
     s.push(20);
     s.push(30);
