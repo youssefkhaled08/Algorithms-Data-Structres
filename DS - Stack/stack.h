@@ -2,6 +2,7 @@
 template <class dataType>
 class Stack
 {
+    private:
     dataType* arr;
     int elements;
     int size;
