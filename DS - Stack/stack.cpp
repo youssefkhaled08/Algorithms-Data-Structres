@@ -1,25 +1,25 @@
-#include "stackArr.h"
+#include "stack.h"
 #include <assert.h>
 
 template <class dataType>
-stackArr<dataType>::stackArr(int val){
+stack<dataType>::stack(int val){
     elements = 0;
     size = val;
     arr = new dataType[size];
 } 
 
 template <class dataType>
-int stackArr<dataType>::length(){
+int stack<dataType>::length(){
     return elements;
 }
 
 template <class dataType>
-bool stackArr<dataType>::isEmpty(){
+bool stack<dataType>::isEmpty(){
     return (elements == 0);
 }
 
 template <class dataType>
-void stackArr<dataType>::expand(){
+void stack<dataType>::expand(){
     size = size * 2;
     dataType* temp = new dataType[size];
     for (int i = 0; i < size; i++){
@@ -30,7 +30,7 @@ void stackArr<dataType>::expand(){
 }
 
 template <class dataType>
-void stackArr<dataType>::push(dataType num){
+void stack<dataType>::push(dataType num){
     if (elements == size)
         expand();
     arr[elements] = num;
@@ -38,18 +38,18 @@ void stackArr<dataType>::push(dataType num){
 }
 
 template <class dataType>
-void stackArr<dataType>::pop(){
+void stack<dataType>::pop(){
     assert(!isEmpty());
     elements--;
 }
 
 template <class dataType>
-dataType stackArr<dataType>::top(){
+dataType stack<dataType>::top(){
     assert(!isEmpty());
     return arr[elements - 1];
 }
 
 template <class dataType>
-stackArr<dataType>::~stackArr(){
+stack<dataType>::~stack(){
     delete [] arr;
 }

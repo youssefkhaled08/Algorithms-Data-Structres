@@ -1,10 +1,10 @@
 #include <iostream>
-#include "stackArr.cpp"
+#include "stack.cpp"
 
 using namespace std;
 
 int main(){
-    stackArr<int> s(5);
+    stack<int> s(5);
     s.push(10);    
     s.push(20);
     s.push(30);
