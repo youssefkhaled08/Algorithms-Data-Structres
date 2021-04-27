@@ -1,40 +1,55 @@
 #include "stackArr.h"
 #include <assert.h>
 
-stackArr::stackArr(int val){
+template <class dataType>
+stackArr<dataType>::stackArr(int val){
     elements = 0;
     size = val;
-    arr = new int[size];
+    arr = new dataType[size];
 } 
-int stackArr::length(){
+
+template <class dataType>
+int stackArr<dataType>::length(){
     return elements;
 }
-bool stackArr::isEmpty(){
+
+template <class dataType>
+bool stackArr<dataType>::isEmpty(){
     return (elements == 0);
 }
-void stackArr::expand(){
+
+template <class dataType>
+void stackArr<dataType>::expand(){
     size = size * 2;
-    int* temp = new int[size];
+    dataType* temp = new dataType[size];
     for (int i = 0; i < size; i++){
         temp[i] = arr[i];
     }
     delete [] arr;
     arr = temp;
 }
-void stackArr::push(int num){
+
+template <class dataType>
+void stackArr<dataType>::push(dataType num){
     if (elements == size)
         expand();
     arr[elements] = num;
     elements++;
 }
-void stackArr::pop(){
+
+template <class dataType>
+void stackArr<dataType>::pop(){
     assert(!isEmpty());
     elements--;
 }
-int stackArr::top(){
+
+template <class dataType>
+dataType stackArr<dataType>::top(){
     assert(!isEmpty());
     return arr[elements - 1];
 }
-stackArr::~stackArr(){
+
+template <class dataType>
+stackArr<dataType>::~stackArr(){
     delete [] arr;
 }

@@ -1,15 +1,16 @@
+template <class dataType>
 class stackArr
 {
-    int* arr;
+    dataType* arr;
     int elements;
     int size;
 
     public:
     stackArr(int val);
-    void push(int num);
+    void push(dataType num);
     void pop();
     int length();
-    int top();
+    dataType top();
     bool isEmpty();
     void expand();
     ~stackArr();
