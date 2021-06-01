@@ -20,11 +20,11 @@ bool Stack<dataType>::isEmpty(){
 
 template <class dataType>
 void Stack<dataType>::expand(){
-    size = size * 2;
-    dataType* temp = new dataType[size];
+    dataType* temp = new dataType[size * 2];
     for (int i = 0; i < size; i++){
         temp[i] = arr[i];
     }
+    size = size * 2;
     delete [] arr;
     arr = temp;
 }
