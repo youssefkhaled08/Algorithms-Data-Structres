@@ -39,13 +39,13 @@ void Stack<dataType>::push(dataType num){
 
 template <class dataType>
 void Stack<dataType>::pop(){
-    assert(!isEmpty());
+    assert(!isEmpty());             // Throw an exception if the stack is empty (conidtion == false).
     elements--;
 }
 
 template <class dataType>
 dataType Stack<dataType>::top(){
-    assert(!isEmpty());
+    assert(!isEmpty());             // Throw an exception if the stack is empty (conidtion == false).
     return arr[elements - 1];
 }
 
