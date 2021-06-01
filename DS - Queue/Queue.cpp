@@ -14,8 +14,8 @@ void Queue<dataType>::Enqueue(dataType val){
     assert(!isFull());
     back = (back + 1) % size;
     arr[back] = val;
-    if (front == -1)
-        front = back;
+    if (isEmpty())
+        front = 0;
     count++;
 }
 template <class dataType>
@@ -23,7 +23,7 @@ void Queue<dataType>::Dequeue(){
     assert(!isEmpty());
     front = (front + 1) % size;
     count--;
-    if (count == 0)
+    if (isEmpty())
         front = back = -1;
 }
 
